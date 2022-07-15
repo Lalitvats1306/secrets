@@ -73,7 +73,7 @@ passport.use(
     {
       clientID: process.env.CLIENT_ID,
       clientSecret: process.env.CLIENT_SECRET,
-      callbackURL: "https://your-secrets-app.herokuapp.com/auth/google/secrets",
+      callbackURL: "https://your-secrets-app.herokuapp.com//auth/google/secrets",
     },
     function (accessToken, refreshToken, profile, cb) {
       console.log(profile);
@@ -168,6 +168,6 @@ app.get("/logout", (req, res) => {
   });
 });
 
-app.listen(process.env.PORT|| 5500, () => {
+app.listen(process.env.PORT || 5500, () => {
   console.log("server started on port : 5500");
 });
