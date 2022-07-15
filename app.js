@@ -31,7 +31,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect("mongodb://localhost:27017/secretsDB");
+mongoose.connect("mongodb+srv://vatslalit0407:"+ process.env.ADMIN_PASS +"@cluster0.wlzwiah.mongodb.net/secretsDB");
 
 // schema
 const userSchema = new mongoose.Schema({
@@ -73,7 +73,7 @@ passport.use(
     {
       clientID: process.env.CLIENT_ID,
       clientSecret: process.env.CLIENT_SECRET,
-      callbackURL: "http://localhost:5500/auth/google/secrets",
+      callbackURL: "https://your-secrets-app.herokuapp.com/auth/google/secrets",
     },
     function (accessToken, refreshToken, profile, cb) {
       console.log(profile);
